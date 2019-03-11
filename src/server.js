@@ -500,6 +500,14 @@ function initializeClient(socket, client, token, lastMessage) {
 
 			// We do not need to do write operations and emit events if nothing changed.
 			if (client.config.clientSettings[newSetting.name] !== newSetting.value) {
+				if (newSetting.name === "awayMessage") {
+					if (typeof newSetting.value !== "string") {
+						newSetting.value = "";
+					}
+
+					client.awayMessage = newSetting.value;
+				}
+
 				client.config.clientSettings[newSetting.name] = newSetting.value;
 
 				// Pass the setting to all clients.

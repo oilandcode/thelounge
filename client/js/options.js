@@ -30,6 +30,7 @@ const noSync = ["syncSettings"];
 // to the server regardless of the clients sync setting.
 const alwaysSync = [
 	"highlights",
+	"awayMessage",
 ];
 
 // Process usersettings from localstorage.
